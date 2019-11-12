@@ -33,7 +33,10 @@ const AppNavbar = () => {
                 </Link>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/peteranthonytibon/item-record-lists">
+                <NavLink
+                  target="_blank"
+                  href="https://github.com/peteranthonytibon/item-record-system"
+                >
                   Github
                 </NavLink>
               </NavItem>

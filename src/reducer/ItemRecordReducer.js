@@ -13,7 +13,7 @@ export const reducer = (state, action) => {
         return state;
       } else {
         getItems = getItems.sort((a, b) =>
-          moment.utc(a.date).diff(moment.utc(b.date))
+          moment.utc(b.startDate).diff(moment.utc(a.startDate))
         );
       }
       return {
