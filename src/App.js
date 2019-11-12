@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AppNavbar from "./components/AppNavbar";
@@ -25,6 +25,9 @@ function App() {
           </Switch>
           <Switch>
             <Route path="/" component={AppHomepage} exact></Route>
+          </Switch>
+          <Switch>
+            <Route path="/edit/:id" component={AddItemForm} exact></Route>
           </Switch>
         </div>
       </Router>

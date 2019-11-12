@@ -20,11 +20,34 @@ export const reducer = (state, action) => {
         ...state,
         items: getItems
       };
+
     case "ADD_ITEM":
+      const storedItem = JSON.parse(localStorage.getItem("item") || "[]");
+      storedItem.push(action.payload);
+      localStorage.setItem("item", JSON.stringify(storedItem));
       return {
         ...state,
-        items: [action.item, ...state.items]
+        items: [action.payload, ...state.items]
       };
+
+    case "DELETE_ITEM":
+      // remove item from localstorage
+      var items = JSON.parse(localStorage["item"]);
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].id === action.payload) {
+          items.splice(i, 1);
+          break;
+        }
+      }
+
+      items = JSON.stringify(items);
+      localStorage.setItem("item", items);
+
+      return {
+        ...state,
+        items: state.items.filter(item => item.id !== action.payload)
+      };
+
     default:
       return state;
   }

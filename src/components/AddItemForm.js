@@ -25,13 +25,7 @@ const AddItemForm = () => {
           validationSchema={AddItemSchema}
           onSubmit={(values, { setSubmitting, resetForm }) => {
             setTimeout(() => {
-              const storedItem = JSON.parse(
-                localStorage.getItem("item") || "[]"
-              );
-              storedItem.push(values);
-              localStorage.setItem("item", JSON.stringify(storedItem));
-
-              dispatch({ type: "ADD_ITEM", item: values });
+              dispatch({ type: "ADD_ITEM", payload: values });
               setSubmitting(false);
               resetForm({});
             }, 400);
@@ -83,7 +77,7 @@ const AddItemForm = () => {
               <Button color="primary" type="submit" disabled={isSubmitting}>
                 Submit
               </Button>
-              {/* <pre>{JSON.stringify(values, 2, null)}</pre> */}
+              <pre>{JSON.stringify(values, 2, null)}</pre>
             </Form>
           )}
         </Formik>
