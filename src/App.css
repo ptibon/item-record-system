@@ -1,22 +1,19 @@
 .App {
+  max-width: 800px;
+  margin: 4em auto 0;
+}
+h1 {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
+.error-field {
+  color: #721c24;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form-holder {
+  max-width: 500px;
+  margin: 2em auto 0;
 }
 
-.App-link {
-  color: #09d3ac;
+form {
+  padding: 2em;
 }
