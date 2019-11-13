@@ -21,13 +21,13 @@ function App() {
         <AppNavbar />
         <div className="App">
           <Switch>
-            <Route path="/item/add" component={AddItemForm} exact></Route>
+            <Route path="/item/new" component={AddItemForm}></Route>
           </Switch>
           <Switch>
             <Route path="/" component={AppHomepage} exact></Route>
           </Switch>
           <Switch>
-            <Route path="/edit/:id" component={AddItemForm} exact></Route>
+            <Route path="/item/:id/edit" component={AddItemForm}></Route>
           </Switch>
         </div>
       </Router>

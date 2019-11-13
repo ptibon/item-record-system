@@ -48,7 +48,7 @@ const ItemCard = ({ item }) => {
       </CardActionArea>
       <CardActions>
         <Button
-          to={"/edit/" + item.id}
+          to={`/item/${item.id}/edit`}
           size="small"
           color="primary"
           component={Link}

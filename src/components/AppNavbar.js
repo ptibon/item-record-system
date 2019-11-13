@@ -28,7 +28,7 @@ const AppNavbar = () => {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <Link to="/item/add" className="nav-link">
+                <Link to="/item/new" className="nav-link">
                   Add Item
                 </Link>
               </NavItem>

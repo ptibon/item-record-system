@@ -1,7 +1,8 @@
 import * as moment from "moment";
 
 export const initialState = {
-  items: []
+  items: [],
+  item: []
 };
 
 export const reducer = (state, action) => {
@@ -46,6 +47,12 @@ export const reducer = (state, action) => {
       return {
         ...state,
         items: state.items.filter(item => item.id !== action.payload)
+      };
+
+    case "GET_ITEM":
+      return {
+        ...state,
+        item: state.items.filter(item => item.id === action.payload)
       };
 
     default:
