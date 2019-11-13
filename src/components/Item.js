@@ -1,25 +1,28 @@
 import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+import {
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Button,
+  Typography
+} from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { ItemRecordContext } from "../context/ItemRecordContext";
 
 const useStyles = makeStyles({
   card: {
-    maxWidth: 500
+    maxWidth: 550,
+    minWidth: 420
   },
   media: {
     height: 100
   }
 });
 
-const ItemCard = ({ item }) => {
+const Item = ({ item }) => {
   const classes = useStyles();
   const { dispatch } = useContext(ItemRecordContext);
 
@@ -32,7 +35,7 @@ const ItemCard = ({ item }) => {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image={item.image}
           title="Contemplative Reptile"
         />
         <CardContent>
@@ -40,9 +43,7 @@ const ItemCard = ({ item }) => {
             {item.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {item.description.trim().length > 10
-              ? item.description
-              : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."}
+            {item.description}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -67,4 +68,4 @@ const ItemCard = ({ item }) => {
   );
 };
 
-export default ItemCard;
+export default Item;

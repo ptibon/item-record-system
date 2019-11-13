@@ -1,9 +1,10 @@
 import React, { useReducer, useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import AppNavbar from "./components/AppNavbar";
+import AppNavbar from "./components/layout/AppNavbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import AddItemForm from "./components/AddItemForm";
+import AddItemForm from "./components/forms/AddItem";
+import EditItemForm from "./components/forms/EditItem";
 import AppHomepage from "./components/AppHomepage";
 import { ItemRecordContext } from "./context/ItemRecordContext";
 import { reducer, initialState } from "./reducer/ItemRecordReducer";
@@ -27,7 +28,7 @@ function App() {
             <Route path="/" component={AppHomepage} exact></Route>
           </Switch>
           <Switch>
-            <Route path="/item/:id/edit" component={AddItemForm}></Route>
+            <Route path="/item/:id/edit" component={EditItemForm} exact></Route>
           </Switch>
         </div>
       </Router>

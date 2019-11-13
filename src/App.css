@@ -4,7 +4,6 @@
 }
 h1 {
   text-align: center;
-  margin-bottom: 1em !important;
 }
 .error-field {
   color: #721c24;
@@ -13,10 +12,6 @@ h1 {
 .form-holder {
   max-width: 500px;
   margin: auto;
-}
-
-form {
-  padding: 2em;
 }
 
 .MuiTab-textColorInherit.Mui-selected {

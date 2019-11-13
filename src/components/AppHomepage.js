@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Container } from "reactstrap";
 import ItemRecordLists from "./ItemRecordLists";
-import AddItemForm from "./AddItemForm";
+import AddItem from "./forms/AddItem";
 import { ItemRecordContext } from "../context/ItemRecordContext";
 
 const AppHomepage = () => {
@@ -9,7 +9,7 @@ const AppHomepage = () => {
 
   return (
     <Container>
-      {state.items.length <= 0 ? <AddItemForm /> : <ItemRecordLists />}
+      {state.items.length === 0 ? <AddItem /> : <ItemRecordLists />}
     </Container>
   );
 };

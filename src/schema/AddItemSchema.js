@@ -5,6 +5,7 @@ export const AddItemSchema = Yup.object().shape({
     .min(2, "Too Short!")
     .max(10, "Too Long!")
     .required("This field is required"),
-  // image: Yup.string().url("Invalid url"),
-  startDate: Yup.string().required("This field is required")
+  image: Yup.string()
+    // .url("Please enter a valid URL")
+    .required("This field is required")
 });
